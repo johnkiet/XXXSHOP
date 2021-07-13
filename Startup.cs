@@ -1,8 +1,8 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(NewShop.Startup))]
-namespace NewShop
+[assembly: OwinStartupAttribute(typeof(BigSchool.Startup))]
+namespace BigSchool
 {
     public partial class Startup
     {

@@ -4,106 +4,40 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
-    <link rel="stylesheet" href="~/Content/css/tooplate-style.css">
-    <link rel="stylesheet" text="textx/css" href="~/Content/bootstrap.min.css">
-    <link rel="stylesheet" href="~/fonts/fontawesome/css/all.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Roboto:ital,wght@1,100&display=swap" rel="stylesheet">
+    <link href="~/Content/Site.css" rel="stylesheet" />
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
 <body>
-    <div class="navbar-top navbar-fixed-top">
-        <ul class="top-left">
-            <li><p class="fa fa-phone"> Hotline: 0389941610</p></li>
-            <li><p class="fa fa-envelope"> Email: caiwebvailon@gmail.com</p></li>
-        </ul>
-        <ul class="top-right">
-            <li><a class="fa fa-home" href="#" style="color:black"></a></li>
-            <li><input class="form-control mr-sm-2" style=" height: 28px; margin-top:3px;" type="search" placeholder="Search..." aria-label="Search"></li>
-            <li><button class="login my-2 my-sm-0" style="height: 28px; margin-top: 1px; border-radius: 5px 5px 5px 5px; ">Login</button></li>
-            <li><button class="cart my-2 my-sm-0" style=" height: 28px; margin-top: 1px; border-radius: 5px 5px 5px 5px;">Cart</button></li>
-        </ul>
-    </div>
-    <div class="container" id="home">
-        <div class="col-12 text-center">
-            <div class="tm-page-header">
-                <i class="fa fa-american-sign-language-interpreting" style="color:palevioletred; font-size:30px;"> XXXSHOP</i>
-            </div>
-        </div>
-    </div>
-    <!-- navbar -->
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
-            <div class="col-12 text-center">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" href="trangchu.html">Home<span class="sr-only"></span></a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" href="ttnam.html" id="navbarDropdown">About</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" href="ttnu.html" id="navbarDropdown">Item</a>
-                        <div class="dropdown-content">
-                            <a class="dropdown-item" href="aonu.html">chese-boot</a>
-                            <a class="dropdown-item" href="quannu.html">sneker</a>
-                            <a class="dropdown-item" href="aonu.html">chese-boot</a>
-                            <a class="dropdown-item" href="quannu.html">sneker</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" href="phukien.html" id="navbarDropdown">Contact</a>
-                    </li>
-
-                </ul>
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
-
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Add Course", "Create", "Courses")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
         </div>
     </div>
     <div class="container body-content">
         @RenderBody()
         <hr />
-
-        <footer class="bg-light text-center text-lg-start">
-            <!-- Grid container -->
-            <div class="container p-4">
-                <!--Grid row-->
-                <div class="row">
-                    <!--Grid column-->
-                    <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-                        <a style="color:black">Chính Sách Đổi Trả</a>
-                        <p>
-                            Những sản phẩm bị lổi do nhà sản xuất hoặc do bên cửa hàng sơ xuất làm sản phẩm bị hư hao không giống mẩu thì quý
-                            khách hàng có thể đến cửa hàng để đổi hoặc trả lại sản phẩm.
-                            Trường hợp sản phẩm không đúng size thì cửa hàng sẽ hổ trợ đổi size khác cho quý khách với điều kiện sản phẩm còn nguyên vẹn cả tem.
-                            tất cả trường hợp khác 2 trường hợp trên cửa hàng sẽ không hổ trợ đổi trả. lưu ý tất cả trường hợp đổi trả phải được thực hiện trong 24h kể  từ khi
-                            sản phẩm được giao cho khách hàng, sau 24h cửa hàng sẽ không chấp nhận đổi trả.
-                        </p>
-                    </div>
-                    <!--Grid column-->
-                    <!--Grid column-->
-                    <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-                        <ul class="footer">
-                            <li><a style="color:black">Liên Hệ</a></li>
-                            <li><p class="fa fa-home">Địa Chỉ: 62 Tân Hòa 2, Phường Hiệp Phú, Quận 9, tp.HCM</p></li>
-                            <li><p class="fa fa-phone">Hotline: 0123456789</p></li>
-                            <li><p class="fa fa-envelope">Email: teamanbangon@gmail.com</p></li>
-                            <a href="https://www.facebook.com/profile.php?id=100008512390840" class="fab fa-facebook-square"></a>
-                            <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                        </ul>
-                    </div>
-                    <!--Grid column-->
-                </div>
-                <!--Grid row-->
-            </div>
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
-        
     </div>
+
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
